@@ -1,18 +1,18 @@
 # README
 
-This is a tokenUpdater app, that tops off a users tokens if they meet specific criteria.
+This is a tokenUpdater app that tops off a user's tokens if they meet specific criteria.
 
 ## Dependencies
 
-run `bundle install`
+run `gem install rspec`
 
 ## Tests
 
-run `rspec spec` in the root folder `thrive-playground`.
+run `rspec spec` in the root folder `thrive-playground`
 
 ## Quick Setup
 
-Place the code block below in challenge.rb.
+Place the code block below in challenge.rb(named as per instructions)
 
 ```data_loader = DataImporter.new('./fixtures/users.json')
 user_data = data_loader.company_data
@@ -48,14 +48,14 @@ Requirements Covered
 
 Description
 
-- Processes application data from external sources, validating it, and integrating it into the rest of the application.
+- Processes application data from external sources, validating it and integrating it into the rest of the application.
 
 Requirements Covered
 
 - Generates report data for all companies
 - Calculates the total top-up amount for a specific company
-- Validates user and company email statuses for notifications
-- Generates a list of users to be notified for a specific company, based on defined constraints
+- Validate user and company email statuses for notifications
+- Generates a list of users to be notified for a specific company based on defined constraints
 - Generates a list of users to be excluded from notifications for a specific company
 - Validates user and top-up attributes for generating user token data
 
@@ -67,7 +67,7 @@ Description
 
 Requirements Covered
 
-- Formats the report data to match specification.
+- Format the report data to match specifications.
 - Handles data sorting and presentation
 - Creates the output file
 
@@ -75,5 +75,5 @@ Requirements Covered
 
 - Extend tests to cover more edge cases and guard clauses
 - Fully set up test environment so we don't have to comment out the `quick set up` code block to run tests
-- Batch processing, to optimize file import and processing
+- Batch processing to optimize file import and processing
 - Code clarity (suggestions are welcome!)
