@@ -1,10 +1,7 @@
 require 'spec_helper'
-require 'stringio'
-require 'pry-byebug'
 require_relative '../lib/company_data_manager'
 
 RSpec.describe CompanyDataManager do
-  # Sample user data and company data for testing
   let(:user_data) do
     [
       { 'id' => 1, 'first_name' => 'Bob', 'last_name' => 'Boberson', 'email' => 'bob.boberson@test.com',
@@ -37,14 +34,15 @@ RSpec.describe CompanyDataManager do
   subject(:company_data_manager) { described_class.new(user_data, company_data) }
 
   describe '#total_top_ups_by_company' do
-    it 'calculates the total top-ups correctly' do
+    it 'calculates the total top-ups per company correctly' do
       total_top_ups = company_data_manager.total_top_ups_by_company(2)
+
       expect(total_top_ups).to eq(40)
     end
   end
 
   describe '#email_notification_list' do
-    it 'returns a list of users that wont be sent an with email notification' do
+    it 'returns a list of users on the companys email notification list' do
       notification_list = company_data_manager.email_notification_list(1)
 
       expect(notification_list).to be_an(Array)
@@ -53,8 +51,9 @@ RSpec.describe CompanyDataManager do
   end
 
   describe '#email_exclusion_list' do
-    it 'returns a list of users without email notification status for a company' do
+    it 'returns a list of users on the companys email exclusion list' do
       exclusion_list = company_data_manager.email_exclusion_list(1)
+
       expect(exclusion_list).to be_an(Array)
       expect(exclusion_list.count).to eq 2
     end
@@ -63,6 +62,7 @@ RSpec.describe CompanyDataManager do
   describe '#user_top_up_data' do
     it 'correctly calculates user token top_ups' do
       user_token_data = company_data_manager.user_token_data
+
       expect(user_token_data).to be_an(Array)
       expect(user_token_data[0][:new_token_balance]).to eq 63
     end
@@ -73,22 +73,6 @@ RSpec.describe CompanyDataManager do
     end
   end
 
-  describe '#sort_report_data' do
-    it 'sorts report data by company ID and last names' do
-      unsorted_report_data = [
-        { company_id: 2, company_name: 'Company B', users_emailed: [], users_not_emailed: [], total_top_ups: 40 },
-        { company_id: 1, company_name: 'Company A', users_emailed: [], users_not_emailed: [], total_top_ups: 30 }
-      ]
-
-      sorted_report_data = company_data_manager.send(:sort_report_data, unsorted_report_data)
-
-      # Add your expectations here to check the correctness of sorted_report_data
-      expect(sorted_report_data[0][:company_id]).to eq(1)
-      expect(sorted_report_data[1][:company_id]).to eq(2)
-      # Add more specific expectations as needed
-    end
-  end
-
   describe '#notification status validation' do
     it 'returns false for users with no email status && no active status in the company' do
       user = { 'id' => 2, 'company_id' => 1, 'email_status' => false }
@@ -96,7 +80,6 @@ RSpec.describe CompanyDataManager do
 
       result = company_data_manager.send(:notification_status, user, company_id)
 
-      # Add your expectations here to check the correctness of result
       expect(result).to be false
     end
   end

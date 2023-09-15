@@ -18,18 +18,16 @@ RSpec.describe CompanyReportGenerator do
 
   describe '#generate_output_file' do
     it 'generates the output file with formatted data' do
-      # Create a StringIO object to capture the file content
       output = StringIO.new
 
       # Stub File.open to use StringIO instead of creating a real file
       allow(File).to receive(:open).with('./fixtures/output.txt', 'a').and_yield(output)
-      # Call the method being tested
+
       report_generator.generate_output_file
 
       # Ensure that File.open was called with the correct arguments
       expect(File).to have_received(:open).with('./fixtures/output.txt', 'a')
 
-      # Define the expected formatted data
       expected_output = <<~EXPECTED
         Company Id: 1
         Company Name: Amanda Clearfield Flowers
@@ -41,8 +39,6 @@ RSpec.describe CompanyReportGenerator do
         Total amount of top ups for Amanda Clearfield Flowers: 100
 
       EXPECTED
-
-      # Check if the captured output matches the expected output
       expect(output.string).to eq(expected_output)
     end
   end
