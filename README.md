@@ -6,6 +6,10 @@ This is a tokenUpdater app, that tops off a users tokens if they meet specific c
 
 run `bundle install`
 
+## Tests
+
+run `rspec spec` in the root folder `thrive-playground`.
+
 ## Quick Setup
 
 Place the code block below in challenge.rb.
@@ -27,10 +31,6 @@ report_generator.generate_output_file
 cd `lib` and run `ruby challenge.rb`
 
 The output file will be created in _/lib/fixtures_
-
-## Tests
-
-run `rspec spec` in the root folder
 
 ## Structure(Class)
 
@@ -74,5 +74,6 @@ Requirements Covered
 ## Possible Improvements
 
 - Extend tests to cover more edge cases and guard clauses
+- Fully set up test environment so we don't have to comment out the `quick set up` code block to run tests
 - Batch processing, to optimize file import and processing
 - Code clarity (suggestions are welcome!)
