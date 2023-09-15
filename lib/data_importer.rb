@@ -11,7 +11,7 @@ class DataImporter
     begin
       @company_data = load_json(file_path)
     rescue JSON::ParserError => e
-      raise DataImportError, "Error: JSON parsing failed - #{e.message}"
+      raise DataImportError, "Error: File parsing failed - #{e.message}"
     rescue Errno::ENOENT => e
       raise FileNotFoundError, "Error: The file '#{e.path}' was not found."
     end
@@ -24,6 +24,6 @@ class DataImporter
       JSON.parse(file.read)
     end
   rescue JSON::ParserError => e
-    raise JSONParsingError, "Error: JSON parsing failed - #{e.message}"
+    raise JSONParsingError, "Error: File parsing failed - #{e.message}"
   end
 end

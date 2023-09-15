@@ -28,6 +28,7 @@ class CompanyDataManager
       .fetch(company_id, [])
   end
 
+  # Updates the user's token value
   def user_token_data
     @user_data.map do |user|
       top_up_amount = company_data_by_id[user['company_id']]&.fetch('top_up', nil)
@@ -48,7 +49,7 @@ class CompanyDataManager
 
   private
 
-  # Validation method
+  # Validates all attributes required for user token top-up
   def validate_top_up_attributes(user, token_value, top_up_amount)
     user['active_status'] && token_value.is_a?(Numeric) && top_up_amount.is_a?(Numeric)
   end
