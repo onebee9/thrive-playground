@@ -73,5 +73,6 @@ Requirements Covered
 
 ## Possible Improvements
 
-- Extend tests to cover more edge cases and guard clauses.
+- Extend tests to cover more edge cases and guard clauses
+- Batch processing, to optimize file import and processing
 - Code clarity (suggestions are welcome!)
