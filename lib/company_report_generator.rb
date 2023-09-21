@@ -3,14 +3,23 @@ require_relative 'company_data_manager'
 
 # Formats report data and gnenerates an output file
 class CompanyReportGenerator
+  attr_reader :company_data
+
   def initialize(report_data)
     @company_data = report_data
   end
 
   def generate_output_file
-    formatted_company_data = @company_data.map { |data| format_output_data(data) }
-    File.open('./fixtures/output.txt', 'a') do |file|
-      file.puts(formatted_company_data)
+    formatted_company_data = company_data.map { |data| format_output_data(data) }
+
+    begin
+      File.open('./lib/fixtures/output.txt', 'a') do |file|
+        file.puts(formatted_company_data)
+      end
+
+      puts "Output file: './lib/fixtures/output.txt' successfully generated."
+    rescue StandardError => e
+      puts "Error: Failed to generate output file - #{e.message}"
     end
   end
 

@@ -10,6 +10,7 @@ class DataImporter
 
     begin
       @company_data = load_json(file_path)
+      puts "File '#{file_path}' successfully loaded and parsed."
     rescue JSON::ParserError => e
       raise DataImportError, "Error: File parsing failed - #{e.message}"
     rescue Errno::ENOENT => e

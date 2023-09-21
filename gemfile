@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+#ruby version
+ruby '3.0.5'
+
+# Testing framework for ruby
+gem 'rspec-rails', '>= 3.9.0'
+
+  # A runtime developer console and IRB alternative with powerful introspection capabilities
+gem 'pry-byebug'
