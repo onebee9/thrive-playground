@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'stringio'
-require_relative '../lib/challenge'
+require_relative '../lib/company_report_generator'
 
 RSpec.describe CompanyReportGenerator do
   let(:report_data) do

@@ -9,7 +9,7 @@ class CompanyReportGenerator
 
   def generate_output_file
     formatted_company_data = @company_data.map { |data| format_output_data(data) }
-    File.open('./fixtures/output.txt', 'a') do |file|
+    File.open('./lib/fixtures/output.txt', 'a') do |file|
       file.puts(formatted_company_data)
     end
   end
