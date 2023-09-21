@@ -10,27 +10,9 @@ run `bundle install`
 
 run `rspec spec` in the root folder `thrive-playground`.
 
-## Quick Setup
+## Generate file
 
-Place the code block below in challenge.rb.
-
-```data_loader = DataImporter.new('./fixtures/users.json')
-user_data = data_loader.company_data
-
-data_loader = DataImporter.new('./fixtures/companies.json')
-company_data = data_loader.company_data
-
-company_data_manager = CompanyDataManager.new(user_data, company_data)
-report_data = company_data_manager.report_data
-
-report_generator = CompanyReportGenerator.new(report_data)
-report_generator.generate_output_file
-
-```
-
-cd `lib` and run `ruby challenge.rb`
-
-The output file will be created in _/lib/fixtures_
+run `ruby challenge` in the root folder `thrive-playground`.
 
 ## Structure(Class)
 
@@ -71,9 +53,13 @@ Requirements Covered
 - Handles data sorting and presentation
 - Creates the output file
 
+### Challenge
+
+Description
+
+- Entry point class, injects data and runs the application.
+
 ## Possible Improvements
 
 - Extend tests to cover more edge cases and guard clauses
-- Fully set up test environment so we don't have to comment out the `quick set up` code block to run tests
 - Batch processing, to optimize file import and processing
-- Code clarity (suggestions are welcome!)
