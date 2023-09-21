@@ -18,21 +18,21 @@ run `ruby -r ./challenge.rb -e "Challenge.call"` in the root folder `thrive-play
 
 ### DataImporter
 
-*Description*
+**Description**
 
 - For parsing files and initial file validation.
 
-*Requirements Covered*
+**Requirements Covered**
 
 - Import and validate Input files
 
 ### CompanyDataManager
 
-*Description*
+**Description**
 
 - Processes application data from external sources, validating it and integrating it into the rest of the application.
 
-*Requirements Covered*
+**Requirements Covered**
 
 - Generates report data for all companies
 - Calculates the total top-up amount for a specific company
@@ -43,11 +43,11 @@ run `ruby -r ./challenge.rb -e "Challenge.call"` in the root folder `thrive-play
 
 ### CompanyReportGenerator
 
-*Description*
+**Description**
 
 - Generates the required output file
 
-*Requirements Covered*
+**Requirements Covered**
 
 - Format the report data to match specifications.
 - Handles data sorting and presentation
@@ -55,7 +55,7 @@ run `ruby -r ./challenge.rb -e "Challenge.call"` in the root folder `thrive-play
 
 ### Challenge
 
-*Description*
+**Description**
 
 - Entry point class, injects data and runs the application.
 
