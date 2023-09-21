@@ -12,7 +12,7 @@ run `rspec spec` in the root folder `thrive-playground`.
 
 ## Generate file
 
-run `ruby challenge` in the root folder `thrive-playground`.
+run `ruby -r ./challenge.rb -e "Challenge.call"` in the root folder `thrive-playground`.
 
 ## Structure(Class)
 

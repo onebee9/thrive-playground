@@ -36,5 +36,3 @@ class Challenge
     end
   end
 end
-
-Challenge.call
