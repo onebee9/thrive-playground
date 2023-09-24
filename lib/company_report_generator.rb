@@ -46,8 +46,8 @@ class CompanyReportGenerator
   end
 
   def format_user_data(user)
-    "#{user['last_name']}, #{user['first_name']}, #{user['email']}\n" \
-    "  Previous Token Balance, #{user['tokens']}\n" \
-    "  New Token Balance #{user['tokens'] * 2}\n"
+    "#{user[:last_name]}, #{user[:first_name]}, #{user[:email]}\n" \
+    "  Previous Token Balance, #{user[:tokens]}\n" \
+    "  New Token Balance #{user[:tokens] * 2}\n"
   end
 end

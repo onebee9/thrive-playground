@@ -22,7 +22,8 @@ class DataImporter
 
   def load_json(file_path)
     File.open(file_path, 'r') do |file|
-      JSON.parse(file.read)
+      JSON.parse(file.read, symbolize_names: true)
+      # JSON.parse(file.read)
     end
   rescue JSON::ParserError => e
     raise JSONParsingError, "Error: File parsing failed - #{e.message}"
