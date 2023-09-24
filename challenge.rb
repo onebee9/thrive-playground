@@ -1,7 +1,6 @@
 require_relative './lib/data_importer'
 require_relative './lib/company_data_manager'
 require_relative './lib/company_report_generator'
-
 class Challenge
   class << self
     attr_reader :user_data, :company_data, :report_data

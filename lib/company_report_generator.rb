@@ -1,7 +1,3 @@
-require_relative 'data_importer'
-require_relative 'company_data_manager'
-
-# Formats report data and gnenerates an output file
 class CompanyReportGenerator
   attr_reader :company_data
 
@@ -46,8 +42,8 @@ class CompanyReportGenerator
   end
 
   def format_user_data(user)
-    "#{user['last_name']}, #{user['first_name']}, #{user['email']}\n" \
-    "  Previous Token Balance, #{user['tokens']}\n" \
-    "  New Token Balance #{user['tokens'] * 2}\n"
+    "#{user[:last_name]}, #{user[:first_name]}, #{user[:email]}\n" \
+    "  Previous Token Balance, #{user[:tokens]}\n" \
+    "  New Token Balance #{user[:tokens] * 2}\n"
   end
 end
