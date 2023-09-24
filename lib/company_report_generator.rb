@@ -1,7 +1,3 @@
-require_relative 'data_importer'
-require_relative 'company_data_manager'
-
-# Formats report data and gnenerates an output file
 class CompanyReportGenerator
   attr_reader :company_data
 

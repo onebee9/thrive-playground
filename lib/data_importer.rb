@@ -1,6 +1,4 @@
 require 'json'
-require 'pry-byebug'
-require_relative './custom_errors'
 
 class DataImporter
   attr_reader :company_data
@@ -12,9 +10,9 @@ class DataImporter
       @company_data = load_json(file_path)
       puts "File '#{file_path}' successfully loaded and parsed."
     rescue JSON::ParserError => e
-      raise DataImportError, "Error: File parsing failed - #{e.message}"
+      raise Exceptions::DataImportError, "Error: File parsing failed - #{e.message}"
     rescue Errno::ENOENT => e
-      raise FileNotFoundError, "Error: The file '#{e.path}' was not found."
+      raise Exceptions::FileNotFoundError, "Error: The file '#{e.path}' was not found."
     end
   end
 
@@ -23,7 +21,6 @@ class DataImporter
   def load_json(file_path)
     File.open(file_path, 'r') do |file|
       JSON.parse(file.read, symbolize_names: true)
-      # JSON.parse(file.read)
     end
   rescue JSON::ParserError => e
     raise JSONParsingError, "Error: File parsing failed - #{e.message}"
