@@ -1,5 +1,4 @@
 require 'json'
-
 class DataImporter
   attr_reader :company_data
 
