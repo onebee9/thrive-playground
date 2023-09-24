@@ -31,7 +31,6 @@ RSpec.describe CompanyReportGenerator do
       expected_output = <<~EXPECTED
         Company Id: 1
         Company Name: Amanda Clearfield Flowers
-
         Users Emailed:
          -#{' '}
         Users Not Emailed:
